@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ronaldo vs Messi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #1a1a1a, #333);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .players {
+      display: flex;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h2 {
+      margin-top: 15px;
+      font-size: 1.5rem;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffcc;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Who is the 🐐?</h1>
+
+  <div class="players">
+    <div class="card" onclick="choose('ronaldo')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo">
+      <h2>Ronaldo</h2>
+    </div>
+
+    <div class="card" onclick="choose('messi')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/330px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg" alt="Messi">
+      <h2>Messi</h2>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function choose(player) {
+      const result = document.getElementById('result');
+      if (player === 'ronaldo') {
+        result.textContent = "Yes siiiiir! 🔥💪";
+        result.style.color = "#00ffcc";
+      } else {
+        result.textContent = "Wrong answer 😤";
+        result.style.color = "#ff5555";
+      }
+    }
+  </script>
+
+</body>
+</html>
